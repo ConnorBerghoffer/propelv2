@@ -6,14 +6,32 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@supabase/ssr": "latest",
-    "@supabase/supabase-js": "latest",
+    "@supabase/supabase-js": "^2.43.4",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@uppy/core": "^3.11.3",
+    "@uppy/dashboard": "^3.8.3",
+    "@uppy/drag-drop": "^3.1.0",
+    "@uppy/file-input": "^3.1.2",
+    "@uppy/image-editor": "^2.4.6",
+    "@uppy/progress-bar": "^3.1.1",
+    "@uppy/react": "^3.3.1",
+    "@uppy/xhr-upload": "^3.6.6",
     "autoprefixer": "10.4.17",
+    "cloudinary": "^2.2.0",
+    "compressorjs": "^1.2.1",
+    "framer-motion": "^11.2.6",
     "geist": "^1.2.1",
     "next": "latest",
+    "next-cloudinary": "^6.5.2",
     "postcss": "8.4.33",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tailwind": "^4.0.0",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3"
   },
@@ -22,5 +40,11 @@
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "encoding": "^0.1.13"
-  }
+  },
+  "name": "propel",
+  "description": "<a href=\"https://demo-nextjs-with-supabase.vercel.app/\">   <img alt=\"Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase\" src=\"https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png\">   <h1 align=\"center\">Next.js and Supabase Starter Kit</h1> </a>",
+  "version": "1.0.0",
+  "main": "next.config.js",
+  "author": "",
+  "license": "ISC"
 }
