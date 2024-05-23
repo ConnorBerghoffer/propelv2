@@ -5,7 +5,10 @@ import { createClient, supabase } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import AvatarUpload from '../upload/AvatarUpload';
 import { CldImage } from 'next-cloudinary';
-import Compressor from 'compressorjs';
+import imageCompression from "browser-image-compression";
+const defaultOptions = {
+  maxSizeMB: 1,
+};
 
 const cloudinaryCloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!;
 const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!;
@@ -26,18 +29,7 @@ const ArtistProfileModal = ({ isOpen, onClose }: any) => {
 
 
   const compress = async (file: File): Promise<any> => {
-    return new Promise((resolve, reject) => {
-      new Compressor(file, {
-        quality: 0.2, // Set the quality of compression
-        success(result) {
-          return resolve(result);
-        },
-        error(err) {
-          console.error('Compression Error:', err);
-          reject(err);
-        },
-      });
-    });
+    return imageCompression(file, defaultOptions);
   };
 
   const handleAvatarUpload = async (files: FileList | null) => {
