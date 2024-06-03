@@ -12,7 +12,7 @@ const Navigation = (props: Props) => {
     <Box mt={10}>
       <Box h={10} alignItems={'center'} px={4} className="fixed top-0 left-0 flex w-full bg-gradient-to-br from-bgLight to-bgCard">
       <Box className="font-bold text-primary">
-        Propel
+        {/* Propel */}
       </Box>
       <Flex marginRight="auto" alignItems="center" className='justify-between w-full'>
         <Box>
@@ -27,11 +27,11 @@ const Navigation = (props: Props) => {
               <Avatar size="sm" name={user.email} src={user.user_metadata.avatar_url} />
             </MenuButton>
             <MenuList className="bg-bgDark">
-              <MenuItem onClick={logout}>Logout</MenuItem>
+              <MenuItem onMouseDown={logout}>Logout</MenuItem>
             </MenuList>
           </Menu>
         ) : (
-          <Button onClick={login} colorScheme="orange">Login</Button>
+          <Button onMouseDown={login} colorScheme="orange">Login</Button>
         )}
       </Flex>
     </Box>

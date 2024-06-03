@@ -47,7 +47,7 @@ const AvatarUpload = () => {
 
   return (
     <div className="flex items-center justify-center p-6 border-2 border-gray-400 border-dashed rounded-lg cursor-pointer"
-      onClick={() => document.getElementById('fileInput')?.click()}
+      onMouseDown={() => document.getElementById('fileInput')?.click()}
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => {
         e.preventDefault();

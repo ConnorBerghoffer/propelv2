@@ -1,5 +1,5 @@
 'use client'
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button } from '@chakra-ui/react';
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button, Box, Text, Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/utils/supabase/client';
@@ -23,23 +23,21 @@ const SetupPage = () => {
     }
   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
   return (
-    <Modal isOpen={isOpen} onClose={closeModal}>
-    <ArtistProfileModal isOpen={isArtistOpen} onClose={() => setIsArtistOpen(!isArtistOpen)}/>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Setup your profile</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <Button colorScheme="blue" onClick={() => setIsArtistOpen(true)}>Create Artist Profile</Button>
-          <Button ml={4} colorScheme="gray" onClick={handleDefaultUser}>Continue as Default</Button>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+    <Box className="bg-bgDark">
+    {isArtistOpen ? 
+        <Flex className="items-center justify-center w-full min-h-screen">
+            <Box className='p-8 rounded-md bg-bgCard'>
+            <Flex direction={'column'} justifyContent={'center'} alignItems={'center'} gap={4}>
+                <Text className="text-lg font-bold">Setup your profile</Text>
+                <Button colorScheme="orange" onMouseDown={() => setIsArtistOpen(true)}>Create Artist Profile</Button>
+                <Button colorScheme="gray" onMouseDown={handleDefaultUser}>Continue as Default</Button>
+            </Flex>
+        </Box> 
+        </Flex>
+        : <ArtistProfileModal/>
+    }
+    </Box>
   );
 };
 

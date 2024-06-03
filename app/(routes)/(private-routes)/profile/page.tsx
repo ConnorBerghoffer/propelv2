@@ -1,7 +1,8 @@
+import ArtistProfileModal from "@/components/modals/ArtistProfileModal";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
-export default async function ProtectedPage() {
+export default async function ProfilePage() {
   const supabase = createClient();
 
   const { data: { user }, } = await supabase.auth.getUser();
@@ -9,7 +10,7 @@ export default async function ProtectedPage() {
 
   return (
     <div>
-      this is protected page
+     profile page
     </div>
   );
 }
